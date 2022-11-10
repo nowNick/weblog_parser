@@ -3,6 +3,7 @@ require_relative './lib/runner'
 
 if ARGV.length < 1
     puts "Please provide path to webserver.log"
+    puts "Usage: ./parser.rb <<path-to-file>>"
     exit
 end
 
