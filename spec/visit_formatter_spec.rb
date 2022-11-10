@@ -24,10 +24,10 @@ RSpec.describe VisitFormatter do
 
             let(:expected_result) do
                 <<~FORMATTED_VISITS
-                /path/3 100 visits
-                /path/1 5 visits
-                /path/2 2 visits
-                /path/4 0 visits
+                /path/3 100 unique visits
+                /path/1 5 unique visits
+                /path/2 2 unique visits
+                /path/4 0 unique visits
                 FORMATTED_VISITS
             end
 

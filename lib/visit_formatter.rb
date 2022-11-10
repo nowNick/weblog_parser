@@ -4,7 +4,7 @@ class VisitFormatter
 
         visits.
             sort_by { |_key, value| -value }.
-            map { |url, visits| "#{url} #{visits} visits"}.
+            map { |url, visits| "#{url} #{visits} unique visits"}.
             join("\n")
     end
 end
