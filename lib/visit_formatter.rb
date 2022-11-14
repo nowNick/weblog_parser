@@ -1,10 +1,12 @@
 class VisitFormatter
-    def format(visits)
-        return "No visits" if visits.empty?
+    def initialize(line_formatter)
+        @line_formatter = line_formatter
+    end
 
+    def format(visits)
         visits.
             sort_by { |_key, value| -value }.
-            map { |url, visits| "#{url} #{visits} unique visits"}.
+            map(&@line_formatter).
             join("\n")
     end
 end

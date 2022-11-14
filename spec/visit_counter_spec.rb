@@ -2,7 +2,7 @@ require 'visit_counter'
 
 RSpec.describe VisitCounter do
     describe "#visits" do
-        subject { VisitCounter.new.count_visits(file_content) }
+        subject { VisitCounter.new.visits_by_ip(file_content) }
 
         context "with empty file" do
             let(:file_content) { "" }
@@ -29,9 +29,9 @@ RSpec.describe VisitCounter do
 
             let(:expected_result) do
                 {
-                    "/path/1" => 2,
-                    "/path/2" => 2,
-                    "/path/3" => 1
+                    "/path/1" => ["172.0.0.1", "172.0.0.1", "172.0.0.2"],
+                    "/path/2" => ["172.0.0.1", "172.0.0.2"],
+                    "/path/3" => ["172.0.0.5"]
                 }
             end
 
